@@ -8,7 +8,7 @@ const Footer = () => (
           <div className="flex items-center gap-2 mb-4">
             <PawPrint className="h-6 w-6 text-primary" />
             <span className="font-heading text-lg font-bold text-primary-foreground">
-              PET WORLD
+              PET Black Amoroso
             </span>
           </div>
           <div className="space-y-3 text-sm">
