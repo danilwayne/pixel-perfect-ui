@@ -12,7 +12,7 @@ const Header = () => {
         <a href="#" className="flex items-center gap-2">
           <PawPrint className="h-7 w-7 text-primary" />
           <span className="font-heading text-xl font-bold text-primary-foreground tracking-wide">
-            PET WORLD
+            Pet Black Amoroso
           </span>
         </a>
 
