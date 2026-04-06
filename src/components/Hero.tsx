@@ -13,7 +13,7 @@ const Hero = () => (
     <div className="container mx-auto px-4">
       <div className="max-w-lg">
         <h1 className="font-heading text-5xl md:text-6xl font-extrabold text-primary-foreground leading-tight mb-4">
-          PET WORLD
+          PET Black Amoroso
         </h1>
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-2">
           MAKE YOUR PETS HAPPY
