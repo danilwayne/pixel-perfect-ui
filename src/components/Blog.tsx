@@ -17,21 +17,27 @@ const posts = [
 const Blog = () => (
   <section className="py-20">
     <div className="container mx-auto px-4">
-      <div className="text-center mb-12">
-        <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-          — Latest Blog
-        </span>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
-          LATEST ARTICLES FROM<br />OUR BLOG POST
-        </h2>
+      {/* Alterado: cabeçalho alinhado à esquerda com destaque vertical para aproximar do layout de referência */}
+      <div className="max-w-6xl mx-auto mb-12">
+        <div className="border-l-4 border-primary pl-6 md:pl-8">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            — Blog mais recente
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-2 leading-tight">
+            ÚLTIMOS ARTIGOS DE<br />NOSSA POSTAGEM NO BLOG
+          </h2>
+        </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+      {/* Alterado: cards em duas colunas com conteúdo horizontal (imagem à esquerda e texto à direita) */}
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {posts.map((post) => (
           <article
             key={post.title}
-            className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
+            className="bg-card overflow-hidden group flex flex-col sm:flex-row"
           >
-            <div className="aspect-video overflow-hidden">
+            {/* Alterado: imagem com largura fixa no desktop para formar card horizontal */}
+            <div className="sm:w-60 md:w-56 lg:w-64 h-56 sm:h-auto overflow-hidden shrink-0">
               <img
                 src={post.img}
                 alt={post.title}
@@ -39,11 +45,13 @@ const Blog = () => (
                 loading="lazy"
               />
             </div>
-            <div className="p-6">
+
+            {/* Alterado: área de conteúdo com tipografia e espaçamento iguais ao estilo de referência */}
+            <div className="p-6 flex flex-col justify-center">
               <span className="text-primary text-xs font-semibold uppercase">
                 {post.date}
               </span>
-              <h3 className="font-heading font-bold text-foreground mt-2 mb-3 leading-snug">
+              <h3 className="font-heading font-bold text-foreground mt-3 mb-4 leading-snug text-2xl">
                 {post.title}
               </h3>
               <a

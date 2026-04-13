@@ -1,13 +1,15 @@
-import heroPets from "@/assets/hero-pets.jpg";
-
 const Hero = () => (
   <section
     id="home"
-    className="relative min-h-[600px] flex items-center pt-20"
+    // Antes era min-h-[792px], agora usamos altura responsiva para qualquer tela
+    className="relative min-h-screen sm:min-h-[500px] md:min-h-[600px] lg:min-h-screen flex items-center pt-16 sm:pt-20"
     style={{
-      backgroundImage: `linear-gradient(to right, hsl(var(--pet-dark) / 0.7), transparent), url(${heroPets})`,
+      backgroundImage: `linear-gradient(to right, hsl(var(--pet-dark) / 0.7), transparent), url('/images/Black-1920x1080.jpeg')`,
       backgroundSize: "cover",
       backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      // backgroundAttachment: "fixed", // parallax effect: imagem fixa enquanto o conteúdo rola
+      // WebkitBackgroundAttachment: "fixed", // suporte para Safari e WebKit
     }}
   >
     <div className="container mx-auto px-4">
@@ -16,17 +18,17 @@ const Hero = () => (
           PET Black Amoroso
         </h1>
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-2">
-          MAKE YOUR PETS HAPPY
+          Deixe seu pet mais feliz todos os dias
         </h2>
         <p className="text-primary-foreground/80 mb-8 text-base leading-relaxed">
-          Lorem tempor cillum excepteur labore dolore amet aliqua sint proident
-          duis incididunt amet cupidatat elit.
+          Cuidado, carinho e atenção de verdade para o seu melhor amigo.
+          Aqui, seu pet recebe o tratamento que ele merece.
         </p>
         <a
           href="#services"
           className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm tracking-wider hover:bg-pet-green-dark transition-colors"
         >
-          READ MORE
+          LEIA MAIS
         </a>
       </div>
     </div>

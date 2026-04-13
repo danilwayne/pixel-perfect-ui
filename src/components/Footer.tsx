@@ -22,7 +22,8 @@ const Footer = () => (
             </p>
             <p className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-              contato@petworld.com
+              {/* contato@petworld.com */}
+              contato@petblackamoroso.com
             </p>
           </div>
         </div>
@@ -77,7 +78,8 @@ const Footer = () => (
     </div>
     <div className="border-t border-primary-foreground/10 py-4">
       <p className="text-center text-xs text-primary-foreground/50">
-        © 2025 Pet World. Todos os direitos reservados.
+        {/* © 2025 Pet World. Todos os direitos reservados. */}
+        © 2026 Pet Black Amoroso. Todos os direitos reservados.
       </p>
     </div>
   </footer>
