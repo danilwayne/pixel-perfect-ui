@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- ============================================ -->
+    <!-- EXERCÍCIO 1: Meta tags e favicon (RESOLVIDO) -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Black Amoroso - Cuidamos do seu pet</title>
+    <meta name="description"
+        content="Pet Black Amoroso oferece banho, tosa, consulta veterinária e muito mais para deixar seu pet feliz e saudável.">
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+
+    <style>
+        /* Estilos básicos para visualização */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        header,
+        section,
+        footer {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #d97706;
+        }
+
+        h2 {
+            color: #92400e;
+            border-bottom: 2px solid #fcd34d;
+            padding-bottom: 8px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #fcd34d;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #d97706;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================ -->
+    <!-- EXERCÍCIO 6: Semântica (RESOLVIDO)           -->
+    <!-- ============================================ -->
+    <header>
+        <!-- Menu de navegação principal -->
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 2: Tags essenciais (RESOLVIDO)     -->
+        <!-- ============================================ -->
+
+        <!-- Título principal do site -->
+        <section id="home">
+            <h1>Pet Black Amoroso</h1>
+            <p>Bem-vindo ao <strong>Pet Black Amoroso</strong>! Aqui oferecemos os melhores cuidados para o seu pet, com
+                muito amor e dedicação. Seu companheiro merece o melhor.</p>
+        </section>
+
+        <hr>
+
+        <section id="servicos">
+            <!--
+                Lista de serviços oferecidos pelo Pet Black Amoroso.
+                Estes serviços são os mais populares entre nossos clientes.
+            -->
+            <h2>Nossos Serviços</h2>
+
+            <ol>
+                <li>Banho e Tosa Completa</li>
+                <li>Consulta Veterinária</li>
+                <li>Hotel para Pets</li>
+            </ol>
+
+            <!-- ============================================ -->
+            <!-- EXERCÍCIO 3: Atributos, links e imagens      -->
+            <!-- ============================================ -->
+
+            <a href="#servicos">Veja nossos serviços</a>
+            <br><br>
+            <a href="https://instagram.com/petblackamoroso" target="_blank">Siga nosso Instagram</a>
+            <br><br>
+            <img src="../src/assets/hero-dog.jpg" alt="Cachorro feliz no pet shop Pet Black Amoroso" width="400">
+        </section>
+
+        <hr>
+
+        <section id="produtos">
+            <h2>Nossos Produtos</h2>
+
+            <ul>
+                <li>Ração Premium Super Premium</li>
+                <li>Brinquedos Interativos</li>
+                <li>Acessórios de Passeio</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 5: Tabelas em HTML (RESOLVIDO)     -->
+        <!-- ============================================ -->
+
+        <section id="tabela-precos">
+            <h2>Tabela de Preços</h2>
+
+            <!--
+                Tabela com preços dos serviços do Pet Black Amoroso.
+                Os preços podem variar conforme o porte do animal.
+                Use thead para cabeçalho e tbody para dados.
+            -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th>Preço</th>
+                        <th>Duração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Banho e Tosa</td>
+                        <td>R$ 80</td>
+                        <td>1h30</td>
+                    </tr>
+                    <tr>
+                        <td>Consulta Veterinária</td>
+                        <td>R$ 120</td>
+                        <td>30min</td>
+                    </tr>
+                    <tr>
+                        <td>Hotel para Pets (diária)</td>
+                        <td>R$ 90</td>
+                        <td>24h</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 4: Comentários (RESOLVIDO)         -->
+        <!-- ============================================ -->
+
+        <!--
+            A tabela acima usa a estrutura semântica <thead> e <tbody>
+            para separar cabeçalho dos dados, facilitando estilização
+            e acessibilidade com leitores de tela.
+        -->
+
+        <!-- Fim do conteúdo principal -->
+
+    </main>
+
+    <footer>
+        <!-- EXERCÍCIO 6.7: Footer com copyright e endereço -->
+        <p>© 2025 Pet Black Amoroso</p>
+        <address>
+            Rua dos Pets, 123 — Bairro Felino<br>
+            São Paulo, SP — CEP: 01000-000<br>
+            contato@petblackamoroso.com
+        </address>
+    </footer>
+
+</body>
+
+</html>
