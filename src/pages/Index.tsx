@@ -61,12 +61,22 @@ const Index = () => {
         <Footer />
       </div>
 
+      <a
+        href="https://wa.me/55986527228"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 rounded-full bg-green-500 px-5 py-3 font-semibold text-white shadow-lg transition hover:bg-green-600"
+        aria-label="Falar no WhatsApp"
+      >
+        WhatsApp
+      </a>
+
       {showTopButton && (
         // botao flutuante aparece somente quando showTopButton = true
         <button
           type="button"
           onClick={scrollToTop} // usa animação manual para subir suavemente
-          className="fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-black border border-slate-300 shadow-lg transition hover:bg-slate-100"
+          className="fixed bottom-24 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-slate-300 bg-white text-black shadow-lg transition hover:bg-slate-100"
           aria-label="Voltar ao topo"
         >
           <ArrowUp className="h-6 w-6" /> {/* seta preta */}
