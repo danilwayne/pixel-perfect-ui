@@ -5,6 +5,7 @@ import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
 import team4 from "@/assets/team-4.jpg";
+import { useDeferredBackground } from "@/hooks/use-deferred-background";
 
 const testimonials = [
   {
@@ -36,6 +37,7 @@ const testimonials = [
 const Testimonial = () => {
   const [activeIndex, setActiveIndex] = useState(0); // índice atual do slide visível
   const [enableTransition, setEnableTransition] = useState(true); // controla animação do track
+  const { elementRef, backgroundImage } = useDeferredBackground<HTMLElement>(cachorroServico);
 
   const loopedTestimonials = useMemo(
     () => [...testimonials, testimonials[0]], // duplica o primeiro no final para loop suave
@@ -86,10 +88,14 @@ const Testimonial = () => {
 
   return (
     <section
+      ref={elementRef}
       id="testimonial"
-      className="relative py-20 md:py-24"
+      className="relative py-20 md:py-24 bg-pet-light-gray"
       style={{
-        backgroundImage: `url(${cachorroServico})`, // fundo novo conforme solicitado
+        // Revisao de performance:
+        // esta foto tambem era carregada cedo demais. Agora o download fica adiado
+        // ate a secao se aproximar da area visivel do usuario.
+        backgroundImage,
         backgroundSize: "cover",
         backgroundPosition: "left center", // prioriza cachorro visível no lado esquerdo
         backgroundRepeat: "no-repeat",

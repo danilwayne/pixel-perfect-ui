@@ -23,4 +23,14 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    files: ["src/components/ui/**/*.{ts,tsx}"],
+    rules: {
+      // Revisao:
+      // esses componentes gerados pelo shadcn/ui exportam helpers e componentes juntos.
+      // O warning de Fast Refresh vira ruido recorrente aqui, entao desativamos apenas
+      // nessa pasta para manter o lint util no restante do projeto.
+      "react-refresh/only-export-components": "off",
+    },
+  },
 );

@@ -5,8 +5,15 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Alterado: base necessária para GitHub Pages funcionar com subpasta /pixel-perfect-ui/
-  base: mode === "production" ? "/pixel-perfect-ui/" : "/",
+  // Causa analisada:
+  // antes o build de produção saía com base fixa em "/pixel-perfect-ui/".
+  // Isso funciona quando o site é servido dentro dessa subpasta, como no GitHub Pages.
+  // No Netlify o domínio publica o app na raiz, então os assets eram procurados no lugar errado
+  // e a página carregava em branco porque o bundle principal não era encontrado.
+  // Correção:
+  // usar "/" por padrão em produção e permitir sobrescrever com VITE_BASE_PATH
+  // apenas quando o deploy realmente acontecer em subpasta.
+  base: mode === "production" ? process.env.VITE_BASE_PATH || "/" : "/",
   server: {
     host: "::",
     port: 8080,

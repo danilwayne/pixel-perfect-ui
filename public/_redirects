@@ -1,0 +1,6 @@
+/* /index.html 200
+
+# Revisao de deploy:
+# esta regra diz ao Netlify para sempre entregar index.html nas rotas da SPA.
+# Sem isso, ao atualizar uma rota do React Router, o servidor tenta achar um arquivo fisico
+# com aquele caminho e responde 404.

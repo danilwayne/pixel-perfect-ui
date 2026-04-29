@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Pet Black Amoroso</title>
-    <script>
-      // Redireciona para index.html mantendo o path para o React Router processar
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 2).join('/') +
-        '/?p=/' + l.pathname.slice(1).split('/').slice(1).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
   </head>
-  <body></body>
+  <body>
+    <!--
+      Revisao:
+      o redirecionamento automatico anterior era um padrao usado em alguns cenarios de GitHub Pages.
+      Neste projeto ele nao e o mecanismo correto para Netlify e ainda podia gerar redirecionamentos errados.
+
+      No Netlify, o comportamento certo para SPA fica em public/_redirects.
+      Este 404.html agora fica apenas como pagina estatica de fallback para hosts que realmente usem 404.
+    -->
+    <main style="font-family: Arial, sans-serif; padding: 40px; line-height: 1.5;">
+      <h1>Pagina nao encontrada</h1>
+      <p>Se voce chegou aqui durante um deploy SPA, revise a configuracao de fallback do servidor.</p>
+      <p><a href="/">Voltar para a pagina inicial</a></p>
+    </main>
+  </body>
 </html>

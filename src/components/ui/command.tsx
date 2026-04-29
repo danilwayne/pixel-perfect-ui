@@ -21,7 +21,10 @@ const Command = React.forwardRef<
 ));
 Command.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+// Revisao de lint:
+// a interface vazia era equivalente ao proprio DialogProps e disparava no-empty-object-type.
+// O alias mantem a intencao do componente sem deixar tipo redundante.
+type CommandDialogProps = DialogProps;
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
