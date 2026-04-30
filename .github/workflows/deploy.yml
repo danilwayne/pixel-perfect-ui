@@ -16,28 +16,42 @@ concurrency:
 
 jobs:
   build:
+    # Build do site estatico que sera publicado no GitHub Pages.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        # Baixa o codigo da branch para este job.
         uses: actions/checkout@v4
 
       - name: Setup Bun
+        # Configura o runtime Bun usado para instalar dependencias e buildar.
         uses: oven-sh/setup-bun@v2
         with:
+          # Mantemos latest para alinhar com a cadeia de build local.
           bun-version: latest
 
       - name: Install dependencies
+        # Instala dependencias a partir do lockfile.
         run: bun install
 
       - name: Build
+        # Executa o build de producao do Vite.
         run: bun run build
+        env:
+          # No GitHub Pages este projeto roda em uma subpasta:
+          # https://danilwayne.github.io/pixel-perfect-ui/
+          # Por isso o Vite precisa gerar os assets com prefixo /pixel-perfect-ui/.
+          # Sem essa variavel, os arquivos seriam apontados para a raiz e a pagina ficaria em branco.
+          VITE_BASE_PATH: /pixel-perfect-ui/
 
       - name: Upload artifact
+        # Envia a pasta dist para a etapa de deploy no Pages.
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    # Job separado que publica o artifact no ambiente github-pages.
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -45,5 +59,6 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
+        # Publica o artifact enviado pelo job anterior.
         id: deployment
         uses: actions/deploy-pages@v4

@@ -7,7 +7,62 @@ Projeto React + Vite publicado no Netlify.
 - `npm install`
 - `npm run dev`
 - `npm run build`
+- `npm run build:github`
 - `npm run preview`
+
+## Passo a passo para publicar
+
+### Netlify
+
+1. Conecte o repositorio no painel do Netlify.
+2. Defina o comando de build como `npm run build`.
+3. Defina o diretorio de publicacao como `dist`.
+4. Nao defina `VITE_BASE_PATH` (o padrao ja e `/`, que e o correto para raiz do dominio).
+5. Confirme que o arquivo `public/_redirects` existe com o conteudo:
+   ```
+   /* /index.html 200
+   ```
+   Sem ele, ao atualizar qualquer pagina interna o servidor responde 404.
+6. Faca um push na branch `main` para acionar o deploy automatico.
+7. Acesse `https://petblackamoroso.netlify.app` e verifique no DevTools (`F12`)
+   que os arquivos em `Network` estao sendo carregados de `/assets/...` (sem subpasta).
+
+### GitHub Pages
+
+1. Va em Settings > Pages no repositorio.
+2. Defina Source como `GitHub Actions`.
+3. O arquivo `.github/workflows/deploy.yml` ja esta configurado com `VITE_BASE_PATH: /pixel-perfect-ui/`.
+4. Faca um push na branch `main`.
+5. Aguarde o Action terminar (aba Actions do repositorio).
+6. Acesse `https://danilwayne.github.io/pixel-perfect-ui/` e verifique no DevTools (`F12`)
+   que os arquivos em `Network` estao sendo carregados de `/pixel-perfect-ui/assets/...`.
+
+### Como testar localmente antes de publicar
+
+Para simular o build do Netlify:
+```bash
+npm run build
+npx serve dist
+# acesse http://localhost:3000
+```
+
+Para simular o build do GitHub Pages:
+```bash
+npm run build:github
+npx serve dist
+# acesse http://localhost:3000/pixel-perfect-ui/
+```
+
+---
+
+## Observacao sobre comentarios no package.json
+
+O arquivo [package.json](package.json) segue o padrao JSON puro, que nao aceita comentarios de linha (`//`) nem bloco (`/* */`).
+
+Por isso, a documentacao do script alterado fica aqui no README:
+
+- `npm run build`: build padrao para hospedagem na raiz do dominio (ex.: Netlify).
+- `npm run build:github`: build para GitHub Pages com base em subpasta `/pixel-perfect-ui/`.
 
 ## Variavel de base do deploy
 
