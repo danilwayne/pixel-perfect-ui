@@ -1,4 +1,4 @@
-# Exercícios para Fixar o Projeto Pixel-Perfect UI - PET Black Amoroso
+# Exercícios para Fixar o Projeto petblackamoroso - PET Black Amoroso
 
 ## Introdução
 Estes exercícios foram criados para fixar todos os conceitos e tecnologias usadas no projeto:
@@ -11,7 +11,7 @@ Estes exercícios foram criados para fixar todos os conceitos e tecnologias usad
 - **Estrutura de componentes** (Header, Hero, About, etc.)
 
 **Pré-requisitos:**
-1. `cd e:/sites/pixel-perfect-ui`
+1. `cd e:/sites/petblackamoroso`
 2. `bun install` (se não feito)
 3. `bun dev` (roda em http://localhost:8080)
 4. Abra DevTools (F12) para inspecionar.

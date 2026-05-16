@@ -27,7 +27,7 @@ const NotFound = () => {
         {/*
           Revisao de roteamento:
           usar Link em vez de <a href="/"> preserva o basename do React Router.
-          Se o app for publicado em subpasta (/pixel-perfect-ui/), o Link ajusta
+          Se o app for publicado em subpasta (/petblackamoroso/), o Link ajusta
           o destino automaticamente. O <a> nao faz isso e quebraria a navegacao.
         */}
         <Link to="/" className="text-primary underline hover:text-primary/90">

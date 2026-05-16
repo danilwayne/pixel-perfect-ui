@@ -31,11 +31,11 @@ Projeto React + Vite publicado no Netlify.
 
 1. Va em Settings > Pages no repositorio.
 2. Defina Source como `GitHub Actions`.
-3. O arquivo `.github/workflows/deploy.yml` ja esta configurado com `VITE_BASE_PATH: /pixel-perfect-ui/`.
+3. O arquivo `.github/workflows/deploy.yml` ja esta configurado com `VITE_BASE_PATH: /petblackamoroso/`.
 4. Faca um push na branch `main`.
 5. Aguarde o Action terminar (aba Actions do repositorio).
-6. Acesse `https://danilwayne.github.io/pixel-perfect-ui/` e verifique no DevTools (`F12`)
-   que os arquivos em `Network` estao sendo carregados de `/pixel-perfect-ui/assets/...`.
+6. Acesse `https://danilwayne.github.io/petblackamoroso/` e verifique no DevTools (`F12`)
+   que os arquivos em `Network` estao sendo carregados de `/petblackamoroso/assets/...`.
 
 ### Como testar localmente antes de publicar
 
@@ -50,7 +50,7 @@ Para simular o build do GitHub Pages:
 ```bash
 npm run build:github
 npx serve dist
-# acesse http://localhost:3000/pixel-perfect-ui/
+# acesse http://localhost:3000/petblackamoroso/
 ```
 
 ---
@@ -62,7 +62,7 @@ O arquivo [package.json](package.json) segue o padrao JSON puro, que nao aceita 
 Por isso, a documentacao do script alterado fica aqui no README:
 
 - `npm run build`: build padrao para hospedagem na raiz do dominio (ex.: Netlify).
-- `npm run build:github`: build para GitHub Pages com base em subpasta `/pixel-perfect-ui/`.
+- `npm run build:github`: build para GitHub Pages com base em subpasta `/petblackamoroso/`.
 
 ## Variavel de base do deploy
 
@@ -74,14 +74,14 @@ O Vite usa a opcao `base` para decidir de onde os arquivos finais serao carregad
 Exemplo em [.env.example](.env.example):
 
 - `VITE_BASE_PATH=/`
-- `VITE_BASE_PATH=/pixel-perfect-ui/`
+- `VITE_BASE_PATH=/petblackamoroso/`
 
 ## Erro analisado neste projeto
 
 O site ficou em branco no Netlify porque o build de producao estava gerando URLs como:
 
-- `/pixel-perfect-ui/assets/index-xxxxx.js`
-- `/pixel-perfect-ui/assets/index-xxxxx.css`
+- `/petblackamoroso/assets/index-xxxxx.js`
+- `/petblackamoroso/assets/index-xxxxx.css`
 
 Isso quebra quando o deploy real esta na raiz do dominio, porque esses arquivos passam a ser procurados no endereco errado.
 

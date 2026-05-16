@@ -14,7 +14,7 @@ import { componentTagger } from "lovable-tagger";
 // A funcao recebe { mode } que indica se e "development" ou "production"
 export default defineConfig(({ mode }) => ({
   // Causa analisada:
-  // antes o build de produção saía com base fixa em "/pixel-perfect-ui/".
+  // antes o build de produção saía com base fixa em "/petblackamoroso/".
   // Isso funciona quando o site é servido dentro dessa subpasta, como no GitHub Pages.
   // No Netlify o domínio publica o app na raiz, então os assets eram procurados no lugar errado
   // e a página carregava em branco porque o bundle principal não era encontrado.

@@ -40,10 +40,10 @@ jobs:
         run: bun run build
         env:
           # No GitHub Pages este projeto roda em uma subpasta:
-          # https://danilwayne.github.io/pixel-perfect-ui/
-          # Por isso o Vite precisa gerar os assets com prefixo /pixel-perfect-ui/.
+          # https://danilwayne.github.io/petblackamoroso/
+          # Por isso o Vite precisa gerar os assets com prefixo /petblackamoroso/.
           # Sem essa variavel, os arquivos seriam apontados para a raiz e a pagina ficaria em branco.
-          VITE_BASE_PATH: /pixel-perfect-ui/
+          VITE_BASE_PATH: /petblackamoroso/
 
       - name: Configure GitHub Pages
         # Prepara a execucao para publicar no ambiente github-pages.
