@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -43,6 +44,11 @@ jobs:
           # Por isso o Vite precisa gerar os assets com prefixo /pixel-perfect-ui/.
           # Sem essa variavel, os arquivos seriam apontados para a raiz e a pagina ficaria em branco.
           VITE_BASE_PATH: /pixel-perfect-ui/
+
+      - name: Configure GitHub Pages
+        # Prepara a execucao para publicar no ambiente github-pages.
+        # Este passo segue o fluxo oficial antes de enviar o artifact.
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         # Envia a pasta dist para a etapa de deploy no Pages.
