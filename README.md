@@ -1,171 +1,129 @@
-# Pet Black Amoroso
+# 🐾 Pet Black Amoroso - Landing Page & Educational Hub
 
-Projeto React + Vite publicado no Netlify.
+Bem-vindo ao projeto **Pet Black Amoroso**! Este é um projeto multifuncional que serve tanto como uma landing page moderna e responsiva para um pet shop, quanto como uma plataforma educacional para o aprendizado de desenvolvimento web moderno.
 
-## Comandos
+## 🚀 Links Úteis
 
-- `npm install`
-- `npm run dev`
-- `npm run build`
-- `npm run build:github`
-- `npm run preview`
+- **Live Demo (Netlify):** [https://petblackamoroso.netlify.app](https://petblackamoroso.netlify.app)
+- **Live Demo (GitHub Pages):** [https://danilwayne.github.io/petblackamoroso/](https://danilwayne.github.io/petblackamoroso/)
 
-## Passo a passo para publicar
+---
 
-### Netlify
+## 🛠️ Tecnologias Utilizadas
 
-1. Conecte o repositorio no painel do Netlify.
-2. Defina o comando de build como `npm run build`.
-3. Defina o diretorio de publicacao como `dist`.
-4. Nao defina `VITE_BASE_PATH` (o padrao ja e `/`, que e o correto para raiz do dominio).
-5. Confirme que o arquivo `public/_redirects` existe com o conteudo:
-   ```
-   /* /index.html 200
-   ```
-   Sem ele, ao atualizar qualquer pagina interna o servidor responde 404.
-6. Faca um push na branch `main` para acionar o deploy automatico.
-7. Acesse `https://petblackamoroso.netlify.app` e verifique no DevTools (`F12`)
-   que os arquivos em `Network` estao sendo carregados de `/assets/...` (sem subpasta).
+Este projeto utiliza o que há de mais moderno no ecossistema Frontend:
 
-### GitHub Pages
+- **Framework:** [React 18](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- **Ícones:** [Lucide React](https://lucide.dev/)
+- **Navegação:** [React Router Dom 6](https://reactrouter.com/)
+- **Gerenciamento de Estado/Dados:** [TanStack Query (React Query)](https://tanstack.com/query/latest)
+- **Formulários:** [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Notificações:** [Sonner](https://sonner.stevenlyui.com/) + shadcn/ui Toast
+- **Testes:** [Vitest](https://vitest.dev/) (Unitários) & [Playwright](https://playwright.dev/) (E2E)
 
-1. Va em Settings > Pages no repositorio.
-2. Defina Source como `GitHub Actions`.
-3. O arquivo `.github/workflows/deploy.yml` ja esta configurado com `VITE_BASE_PATH: /petblackamoroso/`.
-4. Faca um push na branch `main`.
-5. Aguarde o Action terminar (aba Actions do repositorio).
-6. Acesse `https://danilwayne.github.io/petblackamoroso/` e verifique no DevTools (`F12`)
-   que os arquivos em `Network` estao sendo carregados de `/petblackamoroso/assets/...`.
+---
 
-### Como testar localmente antes de publicar
+## ✨ Funcionalidades da Landing Page
 
-Para simular o build do Netlify:
-```bash
-npm run build
-npx serve dist
-# acesse http://localhost:3000
-```
+A landing page foi construída com foco em **Pixel Perfection** e **Conversão**, incluindo:
 
-Para simular o build do GitHub Pages:
-```bash
-npm run build:github
-npx serve dist
-# acesse http://localhost:3000/petblackamoroso/
+- **Header Responsivo:** Menu de navegação suave e adaptável.
+- **Hero Section:** Impacto visual com CTA claro.
+- **Sobre Nós:** História e valores da marca.
+- **Serviços:** Listagem detalhada dos cuidados oferecidos (Banho, Tosa, Veterinário, etc).
+- **Produtos:** Showcase de produtos premium.
+- **Tabela de Preços:** Planos claros para diferentes necessidades.
+- **Equipe:** Conheça os especialistas.
+- **Depoimentos:** Prova social de clientes satisfeitos.
+- **Blog:** Notícias e dicas para pets.
+- **Integração WhatsApp:** Botão flutuante para contato direto.
+- **Scroll-to-Top:** Navegação facilitada com botão de retorno ao topo.
+
+---
+
+## 🎓 Recursos Educacionais
+
+O projeto contém guias e exercícios práticos para quem está começando:
+
+- **[HTML Crash Course](html-crash-course.md):** Um guia rápido de 30 minutos sobre a estrutura do projeto.
+- **[CSS/Tailwind Crash Course](css-crash-course.md):** Foco em estilização moderna.
+- **[Exercícios de Fixação](exercises.md):** Mais de 15 exercícios práticos baseados nos componentes reais do site para dominar React + Tailwind.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+src/
+├── assets/         # Imagens e vetores
+├── components/     # Componentes de UI (shadcn) e Seções (Hero, About, etc)
+├── hooks/          # Hooks customizados do React
+├── lib/            # Configurações de bibliotecas (utils, queryClient)
+├── pages/          # Páginas principais (Index, NotFound)
+├── test/           # Configurações de testes
+├── App.tsx         # Componente raiz e Definição de Rotas
+└── main.tsx        # Ponto de entrada da aplicação
 ```
 
 ---
 
-## Observacao sobre comentarios no package.json
+## 💻 Como Rodar Localmente
 
-O arquivo [package.json](package.json) segue o padrao JSON puro, que nao aceita comentarios de linha (`//`) nem bloco (`/* */`).
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/danilwayne/petblackamoroso.git
+   ```
+2. **Instalar dependências:**
+   ```bash
+   npm install
+   # ou usando bun
+   bun install
+   ```
+3. **Rodar em desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+4. **Abrir no navegador:**
+   Acesse `http://localhost:8080`
 
-Por isso, a documentacao do script alterado fica aqui no README:
+---
 
-- `npm run build`: build padrao para hospedagem na raiz do dominio (ex.: Netlify).
-- `npm run build:github`: build para GitHub Pages com base em subpasta `/petblackamoroso/`.
+## 🚢 Deployment & Troubleshooting
 
-## Variavel de base do deploy
+### Comandos de Build
 
-O Vite usa a opcao `base` para decidir de onde os arquivos finais serao carregados no navegador.
+- `npm run build`: Build padrão para hospedagem na raiz (ex: Netlify).
+- `npm run build:github`: Build customizado para subpastas (ex: GitHub Pages).
 
-- No Netlify, quando o site fica na raiz do dominio, a base correta e `/`
-- Em hospedagens com subpasta, a base precisa apontar para essa subpasta
+### Guia para "Página em Branco" após Deploy
 
-Exemplo em [.env.example](.env.example):
+Se o site abrir em branco após o deploy, verifique a variável de base no `vite.config.ts`:
 
-- `VITE_BASE_PATH=/`
-- `VITE_BASE_PATH=/petblackamoroso/`
+1. No **Netlify**, a base deve ser `/`.
+2. No **GitHub Pages** (se em subpasta), a base deve ser `/petblackamoroso/`.
+3. Verifique se o `BrowserRouter` no `App.tsx` usa `import.meta.env.BASE_URL`:
+   ```tsx
+   <BrowserRouter basename={import.meta.env.BASE_URL}>
+   ```
 
-## Erro analisado neste projeto
+---
 
-O site ficou em branco no Netlify porque o build de producao estava gerando URLs como:
+## 🧪 Testes
 
-- `/petblackamoroso/assets/index-xxxxx.js`
-- `/petblackamoroso/assets/index-xxxxx.css`
-
-Isso quebra quando o deploy real esta na raiz do dominio, porque esses arquivos passam a ser procurados no endereco errado.
-
-O ponto corrigido foi em [vite.config.ts](vite.config.ts), deixando a base padrao como `/` e permitindo sobrescrever com `VITE_BASE_PATH` apenas quando necessario.
-
-## Como identificar esse tipo de erro sozinho
-
-### 1. Verifique o sintoma no navegador
-
-Se a pagina abrir em branco:
-
-- abra o DevTools com `F12`
-- confira a aba `Console`
-- confira a aba `Network`
-
-Sinais comuns:
-
-- erro `Failed to load module script`
-- erro `404` para arquivos em `/assets/...` ou em uma subpasta errada
-- erro de MIME type por arquivo HTML sendo retornado no lugar do JS
-
-### 2. Inspecione o HTML gerado no build
-
-Rode:
-
+Rode os testes unitários com:
 ```bash
-npm run build
+npm run test
 ```
 
-Depois abra `dist/index.html` e procure por `script` e `link`.
+---
 
-Se aparecer algo como:
+## 📄 Licença
 
-```html
-<script type="module" src="/pixel-perfect-ui/assets/index-xxxx.js"></script>
-```
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-mas seu site esta publicado em:
+---
 
-```text
-https://seusite.netlify.app/
-```
-
-entao a base do build esta errada.
-
-### 3. Descubra onde a URL base e controlada
-
-Em projetos Vite, normalmente o controle fica em [vite.config.ts](vite.config.ts).
-
-Verifique a opcao:
-
-```ts
-base: "/"
-```
-
-ou alguma variacao com ambiente, por exemplo:
-
-```ts
-base: process.env.VITE_BASE_PATH || "/"
-```
-
-### 4. Confira o router
-
-Se o projeto usa `react-router-dom`, verifique se o `BrowserRouter` acompanha a mesma base.
-
-Neste projeto ele usa [src/App.tsx](src/App.tsx), com:
-
-```tsx
-<BrowserRouter basename={import.meta.env.BASE_URL}>
-```
-
-Isso esta correto porque reaproveita a mesma base definida pelo Vite.
-
-## Fluxo de revisao rapido para deploy em branco
-
-1. Confirmar se o deploy terminou sem erro no provedor.
-2. Abrir o site e inspecionar `Console` e `Network`.
-3. Procurar `404` ou caminhos errados para JS e CSS.
-4. Rodar `npm run build` localmente.
-5. Abrir `dist/index.html` e conferir os caminhos dos assets.
-6. Corrigir o `base` do Vite se o caminho estiver errado.
-7. Se houver router, alinhar o `basename` com `import.meta.env.BASE_URL`.
-8. Publicar novamente.
-
-## Observacao pratica
-
-Quando o deploy mostra `Published` mas a pagina abre em branco, nao assuma que o problema esta no Netlify. Muitas vezes o deploy foi concluido com sucesso, mas o bundle final foi gerado com caminhos errados.
+*Feito com ❤️ por [Danil Wayne](https://github.com/danilwayne)*

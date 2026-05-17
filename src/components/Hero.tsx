@@ -1,10 +1,12 @@
+import heroImage from "@/assets/Black-1920x1080.jpeg";
+
 const Hero = () => (
   <section
     id="home"
     // Antes era min-h-[792px], agora usamos altura responsiva para qualquer tela
     className="relative min-h-screen sm:min-h-[500px] md:min-h-[600px] lg:min-h-screen flex items-center pt-16 sm:pt-20"
     style={{
-      backgroundImage: `linear-gradient(to right, hsl(var(--pet-dark) / 0.7), transparent), url('/images/Black-1920x1080.jpeg')`,
+      backgroundImage: `linear-gradient(to right, hsl(var(--pet-dark) / 0.7), transparent), url('${heroImage}')`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
